@@ -6,6 +6,11 @@ see parent repo: https://github.com/chajiuqqq/netem
 
 **install PYPI dependence**
 ```
+pip install gymnasium redis stable-baselines3[extra] -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+or
+
+```
 python3 -m venv python-env
 source python-env/bin/activate
 pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
