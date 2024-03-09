@@ -4,20 +4,24 @@ import json
 import time
 import random
 class  QuicMqManager:
-    def __init__(self,connection_id):
+    def __init__(self,connection_id,port=6379):
         self.listen_channel = f'/{connection_id}/state'
         self.pub_channel = f'/{connection_id}/action'
-        self.redis_client = RedisManager()
+        self.redis_client = RedisManager(port=port)
         self.states={} # key是seq,v是state
         self.actions={} # key是seq,v是action
         self.seq = -1
         self.FIN = False
 
         self.redis_client.subscribe_channel(self.listen_channel)
+        print(f'subscribe to {self.listen_channel}')
 
     def read_state(self):
         # 返回state和是否结束
-        state = self.redis_client.get_message()
+        # fix: can't get states
+        while not state:
+            state = self.redis_client.get_message()
+            time.sleep(0.01)
         if 'FIN' in state:
             self.FIN=True
             self._stop_sub_channel(self.listen_channel)
@@ -32,6 +36,7 @@ class  QuicMqManager:
         action_msg = {'seq':self.seq,'action':action}
         self.actions[self.seq]=action
         self.redis_client.publish_message(self.pub_channel,json.dumps(action_msg))
+        print(f'publish to {self.pub_channel}: {json.dumps(action_msg)}')
     def _stop_sub_channel(self,channel):
         self.redis_client._stop_sub_channel(channel)
 

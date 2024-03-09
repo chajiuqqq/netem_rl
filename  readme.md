@@ -6,7 +6,7 @@ see parent repo: https://github.com/chajiuqqq/netem
 
 **install PYPI dependence**
 ```
-pip install gymnasium redis stable-baselines3[extra] -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip install gymnasium redis stable-baselines3[extra] mininet -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 or
 

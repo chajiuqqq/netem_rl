@@ -1,0 +1,9 @@
+19285:C 09 Mar 2024 00:13:29.807 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+19285:C 09 Mar 2024 00:13:29.807 # Redis version=5.0.7, bits=64, commit=00000000, modified=0, pid=19285, just started
+19285:C 09 Mar 2024 00:13:29.807 # Configuration loaded
+19285:M 09 Mar 2024 00:13:29.810 # Not listening to IPv6: unsupproted
+19285:M 09 Mar 2024 00:13:29.810 * Running mode=standalone, port=6379.
+19285:M 09 Mar 2024 00:13:29.810 # Server initialized
+19285:M 09 Mar 2024 00:13:29.810 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+19285:M 09 Mar 2024 00:13:29.810 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+19285:M 09 Mar 2024 00:13:29.810 * Ready to accept connections

@@ -1,9 +1,9 @@
 from envs.env_netem import NetEnv
 
 
-env = NetEnv('id12345')
+env = NetEnv('test1234')
 obs, _ = env.reset()
-env.render()
+# env.render()
 
 print('obs_space',env.observation_space)
 print('action_space',env.action_space)
